@@ -586,6 +586,7 @@ prompt_toolkit = ">=3.0.41,<3.1.0"
 pygments = ">=2.4.0"
 stack_data = "*"
 traitlets = ">=5.13.0"
+typing_extensions = {version = ">=4.6", markers = "python_version < \"3.12\""}
 
 [package.extras]
 all = ["ipython[black,doc,kernel,matplotlib,nbconvert,nbformat,notebook,parallel,qtconsole]", "ipython[test,test-extra]"]
@@ -1641,6 +1642,7 @@ files = [
     {file = "setuptools-76.0.0-py3-none-any.whl", hash = "sha256:199466a166ff664970d0ee145839f5582cb9bca7a0a3a2e795b6a9cb2308e9c6"},
     {file = "setuptools-76.0.0.tar.gz", hash = "sha256:43b4ee60e10b0d0ee98ad11918e114c70701bc6051662a9a675a0496c1a158f4"},
 ]
+markers = {docs = "python_version >= \"3.12\""}
 
 [package.extras]
 check = ["pytest-checkdocs (>=2.4)", "pytest-ruff (>=0.2.1) ; sys_platform != \"cygwin\"", "ruff (>=0.8.0) ; sys_platform != \"cygwin\""]
@@ -1735,7 +1737,10 @@ files = [
 ]
 
 [package.dependencies]
-astroid = {version = ">=3", markers = "python_version >= \"3.12\""}
+astroid = [
+    {version = ">=2.7", markers = "python_version < \"3.12\""},
+    {version = ">=3", markers = "python_version >= \"3.12\""},
+]
 Jinja2 = "*"
 PyYAML = "*"
 sphinx = ">=7.4.0"
@@ -1959,11 +1964,12 @@ version = "4.12.2"
 description = "Backported and Experimental Type Hints for Python 3.8+"
 optional = false
 python-versions = ">=3.8"
-groups = ["docs", "lint"]
+groups = ["dev", "docs", "lint"]
 files = [
     {file = "typing_extensions-4.12.2-py3-none-any.whl", hash = "sha256:04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d"},
     {file = "typing_extensions-4.12.2.tar.gz", hash = "sha256:1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"},
 ]
+markers = {dev = "python_version < \"3.12\""}
 
 [[package]]
 name = "urllib3"
@@ -1997,5 +2003,5 @@ files = [
 
 [metadata]
 lock-version = "2.1"
-python-versions = ">=3.13,<4"
-content-hash = "7ec0ea88ca663fa6e8d8b772d88e62ebfc17514435e1a978d690e411a6b93a8b"
+python-versions = ">=3.11,<4"
+content-hash = "dba4a0caca92719ce35c19a039c87ebb68506719924827ff1b50eda77816365c"
